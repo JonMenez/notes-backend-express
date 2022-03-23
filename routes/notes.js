@@ -6,7 +6,6 @@ const { notesGet,
 
 const router = Router()
 
-
 router.get('/', notesGet)
 
 router.put('/:id', notePut)

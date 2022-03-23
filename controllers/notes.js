@@ -2,7 +2,8 @@ const { request, response } = require('express')
 
 
 const notesGet = (request, response) => {
-    response.json('get petition CONTROLADOR')
+    response.json('get petition CONTROLADOR').end()
+
 }
 
 const notePut = (request, response) => {
@@ -11,7 +12,7 @@ const notePut = (request, response) => {
     response.json({
         name: 'Joan',
         id
-    })
+    }).end()
 }
 const notePost = (request, response) => {
     const { query } = request
@@ -19,10 +20,10 @@ const notePost = (request, response) => {
     response.json({
         name: 'Joan',
         ...query
-    })
+    }).end()
 }
 const noteDelete = (request, response) => {
-    response.json('delete petition')
+    response.json('delete petition').end()
 }
 
 module.exports = {
