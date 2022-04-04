@@ -56,7 +56,8 @@ const usersDelete = async (request, response) => {
 
     const user = await User.findByIdAndUpdate(id, { status: false })
 
-    response.json({ msg: `user id ${id} deleted`, user }).end()
+
+    response.json({ user }).end()
 }
 
 module.exports = {
