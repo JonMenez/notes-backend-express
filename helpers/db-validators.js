@@ -1,3 +1,5 @@
+const Product = require('../models/product')
+const Category = require('../models/category')
 const Role = require('../models/role')
 const User = require('../models/user')
 
@@ -25,8 +27,26 @@ const mongoIdExist = async (id) => {
     }
 }
 
+// Check category by id
+const categoryExistById = async (id) => {
+    const checkCategory = await Category.findById(id)
+    if (!checkCategory) {
+        throw new Error(`there is not category with id: ${id}`)
+    }
+}
+
+// Check product by id
+const productExistById = async (id) => {
+    const checkProduct = await Product.findById(id)
+    if (!checkProduct) {
+        throw new Error(`there is not product with id: ${id}`)
+    }
+}
+
 module.exports = {
-    rolValidation,
+    categoryExistById,
     emailExist,
-    mongoIdExist
+    mongoIdExist,
+    productExistById,
+    rolValidation,
 }
