@@ -145,6 +145,7 @@ const getImage = async (request, response) => {
         if (fs.existsSync(pathImage)) {
             return response.sendFile(pathImage)
         }
+        return response.redirect(model.img)
     }
 
     const noImage = path.join(__dirname, '../assets', 'no-image.jpg')
